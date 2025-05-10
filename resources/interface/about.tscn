@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://rwqxpwyuadew"]
+
+[sub_resource type="GDScript" id="GDScript_psspk"]
+script/source = "extends Panel
+
+
+func _on_return_pressed() -> void:
+	ScreenManager.change_to_previous()
+"
+
+[node name="Panel" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_psspk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3
+anchor_top = 0.2
+anchor_right = 0.7
+anchor_bottom = 0.8
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "About"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "lorem ipsum
+"
+
+[node name="return" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "return"
+
+[connection signal="pressed" from="VBoxContainer/return" to="." method="_on_return_pressed"]

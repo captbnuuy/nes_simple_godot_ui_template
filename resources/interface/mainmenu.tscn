@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://spoohsscrrwi"]
+
+[ext_resource type="Script" uid="uid://h8o00yk3yena" path="res://resources/interface/mainmenu.gd" id="1_cmhrf"]
+[ext_resource type="Script" uid="uid://bvfml2wooekor" path="res://resources/interface/components/main menu button.gd" id="2_msjpm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmhrf"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cmhrf")
+OPTION_SCENE = "uid://b7im836kbgvpq"
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cmhrf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(400, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 53
+text = "UI TEMPLATE"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 160)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 5
+
+[node name="PLAY" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "PLAY"
+script = ExtResource("2_msjpm")
+
+[node name="OPTIONS" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "OPTION"
+script = ExtResource("2_msjpm")
+NEW_SCENE = "uid://b7im836kbgvpq"
+
+[node name="ABOUT" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "ABOUT"
+script = ExtResource("2_msjpm")
+NEW_SCENE = "uid://rwqxpwyuadew"
+
+[node name="EXIT" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "EXIT"
+script = ExtResource("2_msjpm")
