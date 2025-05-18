@@ -1,0 +1,66 @@
+[gd_scene load_steps=3 format=3 uid="uid://kxux6kxcmues"]
+
+[ext_resource type="Script" uid="uid://p1n5vp5itl5a" path="res://resources/interface/select_saves.gd" id="1_o5oki"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmhrf"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("itemlist")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o5oki")
+itemlist = NodePath("PanelContainer/VBoxContainer/ItemList")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cmhrf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+custom_minimum_size = Vector2(400, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 53
+text = "Select Save"
+horizontal_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+auto_width = true
+auto_height = true
+
+[node name="hbox" type="HBoxContainer" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 5
+
+[node name="NEW GAME" type="Button" parent="PanelContainer/VBoxContainer/hbox"]
+layout_mode = 2
+text = "NEW GAME
+"
+
+[node name="LOAD_GAME" type="Button" parent="PanelContainer/VBoxContainer/hbox"]
+layout_mode = 2
+text = "LOAD GAME"
+
+[node name="RETURN" type="Button" parent="PanelContainer/VBoxContainer/hbox"]
+layout_mode = 2
+text = "Return"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/hbox/NEW GAME" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/hbox/LOAD_GAME" to="." method="_on_load_game_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/hbox/RETURN" to="." method="_on_return_pressed"]

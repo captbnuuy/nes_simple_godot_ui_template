@@ -48,6 +48,7 @@ theme_override_constants/separation = 5
 layout_mode = 2
 text = "PLAY"
 script = ExtResource("2_msjpm")
+NEW_SCENE = "uid://kxux6kxcmues"
 
 [node name="OPTIONS" type="Button" parent="PanelContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2

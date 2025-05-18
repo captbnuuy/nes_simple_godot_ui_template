@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7ria5j6yo3jf"]
+
+[ext_resource type="Script" uid="uid://b3j1b0px473o4" path="res://resources/test_level.gd" id="1_hgf8a"]
+
+[node name="TestLevel" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." node_paths=PackedStringArray("textname", "scorelabel")]
+script = ExtResource("1_hgf8a")
+textname = NodePath("Control/Panel/GridContainer/TextEdit")
+scorelabel = NodePath("Control/Panel/GridContainer/HBoxContainer/Label3")
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/Panel/GridContainer"]
+layout_mode = 2
+text = "name :"
+
+[node name="TextEdit" type="LineEdit" parent="CanvasLayer/Control/Panel/GridContainer"]
+layout_mode = 2
+virtual_keyboard_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/Panel/GridContainer"]
+layout_mode = 2
+text = "add score"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/Panel/GridContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/Panel/GridContainer/HBoxContainer"]
+layout_mode = 2
+text = "score :"
+
+[node name="Label3" type="Label" parent="CanvasLayer/Control/Panel/GridContainer/HBoxContainer"]
+layout_mode = 2
+text = "000"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/Panel/GridContainer"]
+layout_mode = 2
+text = "save game"
+
+[connection signal="pressed" from="CanvasLayer/Control/Panel/GridContainer/Button" to="CanvasLayer" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/GridContainer/Button2" to="CanvasLayer" method="_on_button_2_pressed"]

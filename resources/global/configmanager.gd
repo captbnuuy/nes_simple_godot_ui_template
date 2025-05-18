@@ -31,8 +31,9 @@ func _ready() -> void:
 		var _bus = AudioServer.get_bus_index(volume)
 		AudioServer.set_bus_volume_db(_bus,linear_to_db(config.get_value("volume",volume)))
 		
-	Utils.set_resolution(config.get_value("screen","resolution"))
-	Utils.set_screenmode(config.get_value("screen","borderless"))
+	Util.set_resolution(config.get_value("screen","resolution"))
+	Util.set_screenmode(config.get_value("screen","borderless"))
+	
 func setvolume(bus:String,val:float) -> void:
 	config.set_value('volume',bus,val)
 	config.save("user://settings.cfg")

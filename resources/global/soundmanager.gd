@@ -3,6 +3,8 @@ extends Node
 @export var sfx_maxchannel :int = 4
 var sfx_slot :Array[AudioStreamPlayer] = []
 var sfx_queue :Array[String] = []
+var sfx_pos_queue :Array[AudioStreamPlayer2D] = []
+var sfx_pos_slot :Dictionary[String,int] = {}
 
 func _ready() -> void:
 	for i in range(sfx_maxchannel):
@@ -13,8 +15,6 @@ func _ready() -> void:
 		sfx_slot.append(sfxplayer)
 	
 		
-func _sfx_finish_play(stream) -> void:
-	sfx_slot.append(stream)
 
 func _process(_delta) -> void:
 	if not sfx_queue.is_empty() and not sfx_slot.is_empty():
@@ -25,6 +25,8 @@ func _process(_delta) -> void:
 func sfx_play(file:String):
 	sfx_queue.append(file)
 	
+func _sfx_finish_play(stream) -> void:
+	sfx_slot.append(stream)
 func music_play(file:String):
 	var loaded_file = load(file)
 	if $music/player.stream != loaded_file:

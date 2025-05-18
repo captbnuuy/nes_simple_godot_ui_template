@@ -46,7 +46,7 @@ func _input(event: InputEvent) -> void:
 func rebind_action_key(event: InputEvent) -> void:
 	InputMap.action_erase_events(action_name)
 	InputMap.action_add_event(action_name,event)
-	CFG.updatebind(action_name,event)
+	Util.cfg.updatebind(action_name,event)
 	set_process_input(false)
 	set_text_for_key()
 	set_action_name()

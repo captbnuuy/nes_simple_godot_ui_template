@@ -5,7 +5,7 @@ script/source = "extends Panel
 
 
 func _on_return_pressed() -> void:
-	ScreenManager.change_to_previous()
+	Util.scene.change_to_previous()
 "
 
 [node name="Panel" type="Panel"]

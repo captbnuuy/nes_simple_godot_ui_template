@@ -7,4 +7,4 @@ func _ready() -> void:
 
 
 func _on_options_pressed() -> void:
-	ScreenManager.change_scene_with_loading(OPTION_SCENE)
+	Util.scene.change_scene_with_loading(OPTION_SCENE)
