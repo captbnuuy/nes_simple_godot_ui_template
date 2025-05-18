@@ -4,7 +4,6 @@ class_name sound_mgr
 var sfx_slot :Array[AudioStreamPlayer] = []
 var sfx_queue :Array[String] = []
 var sfx_pos_slot :Array[AudioStreamPlayer2D] = []
-var sfx_pos_used :Array[AudioStreamPlayer2D] = []
 var sfx_pos_queue :Dictionary[String,Vector2] = {}
 
 func _ready() -> void:
@@ -13,7 +12,7 @@ func _ready() -> void:
 		sfxplayer.bus = AudioServer.get_bus_name(2)
 		sfxplayer.finished.connect(_sfx_finish_play.bind(sfxplayer))
 		$sfx.add_child(sfxplayer)
-		sfx_pos_slot.append(sfxplayer)
+		sfx_slot.append(sfxplayer)
 		var sfxposplayer = AudioStreamPlayer2D.new()
 		sfxposplayer.bus = AudioServer.get_bus_name(2)
 		sfxposplayer.finished.connect(_sfx_pos_finish_play.bind(sfxplayer))
