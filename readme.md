@@ -1,0 +1,1 @@
+this is a simple gui template for your godot ui with complete control over many thing
