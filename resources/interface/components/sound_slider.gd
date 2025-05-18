@@ -7,3 +7,4 @@ func _on_button_pressed() -> void:
 
 func _on_button_2_pressed() -> void:
 	Util.sound.sfx_play('res://asset/audio/push.wav')
+	

@@ -11,7 +11,7 @@ func _ready() -> void:
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count()-1)
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if loading:
 		var load_progess = ResourceLoader.load_threaded_get_status(load_scene,progress)
 		$progress/bar.value = floor(progress[0]*100)

@@ -16,11 +16,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ScreenManager="res://resources/global/loading_screen.tscn"
-soundmanager="res://resources/global/soundmanager.tscn"
-CFG="res://resources/global/configmanager.gd"
-Utils="res://resources/global/utils.gd"
-SaveMGR="res://resources/global/savemanager.gd"
 Util="*res://resources/global/util.tscn"
 
 [display]
