@@ -1,4 +1,5 @@
 extends Node
+class_name screen_mgr
 var progress = []
 var current_scene
 var load_scene

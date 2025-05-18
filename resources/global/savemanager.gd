@@ -1,4 +1,5 @@
 extends Node
+class_name  save_mgr
 var saves_list :PackedStringArray
 var current_save:String
 func _ready() -> void:

@@ -1,8 +1,8 @@
 extends Node
-@export var sound :Node
-@export var cfg :Node
-@export var scene :Node
-@export var save :Node
+@export var sound :sound_mgr
+@export var cfg :cfg_mgr
+@export var scene :screen_mgr
+@export var save :save_mgr
 
 const displaymode :Array[String] = [
 	"Windowed",

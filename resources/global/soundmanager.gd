@@ -1,5 +1,5 @@
 extends Node
-
+class_name sound_mgr
 @export var sfx_maxchannel :int = 4
 var sfx_slot :Array[AudioStreamPlayer] = []
 var sfx_queue :Array[String] = []

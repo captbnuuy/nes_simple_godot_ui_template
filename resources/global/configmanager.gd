@@ -1,5 +1,6 @@
 extends Node
 
+class_name cfg_mgr
 var config: ConfigFile = ConfigFile.new()
 @export var reset:bool = false 
 enum {KEYBOARD,MOUSE,GAMEPAD}
