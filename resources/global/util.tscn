@@ -70,8 +70,9 @@ cfg = NodePath("configmanager")
 scene = NodePath("scene changer")
 save = NodePath("savemanager")
 
-[node name="Soundmanager" type="Node" parent="."]
+[node name="Soundmanager" type="Node" parent="." node_paths=PackedStringArray("music_player")]
 script = ExtResource("2_css6l")
+music_player = NodePath("music/player")
 
 [node name="music" type="Node" parent="Soundmanager"]
 

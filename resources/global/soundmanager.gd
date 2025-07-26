@@ -1,6 +1,7 @@
 extends Node
 class_name sound_mgr
 @export var sfx_maxchannel :int = 4
+@export var music_player :AudioStreamPlayer
 var sfx_slot :Array[AudioStreamPlayer] = []
 var sfx_queue :Array[String] = []
 var sfx_pos_slot :Array[AudioStreamPlayer2D] = []
@@ -48,7 +49,11 @@ func _sfx_pos_finish_play(stream:AudioStreamPlayer2D):
 	
 func music_play(file:String):
 	var loaded_file = load(file)
-	if $music/player.stream != loaded_file:
-		$music/player.stream = loaded_file
-		$music/player.play()
+	if music_player.stream != loaded_file:
+		music_player.stream = loaded_file
+		music_player.play()
 	
+func music_stop():
+	if music_player.stream:
+		music_player.stop()
+		music_player.stream = null
