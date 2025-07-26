@@ -37,13 +37,13 @@ func _process(_delta) -> void:
 func sfx_play(file:String):
 	sfx_queue.append(file)
 	
-func _sfx_finish_play(stream) -> void:
+func _sfx_finish_play(stream: AudioStreamPlayer) -> void:
 	sfx_slot.append(stream)
 	
 func sfx_positional_play(file:String,position:Vector2):
 	sfx_pos_queue[file] = position
 	
-func _sfx_pos_finish_play(stream):
+func _sfx_pos_finish_play(stream:AudioStreamPlayer2D):
 	sfx_pos_slot.append(stream)
 	
 func music_play(file:String):
